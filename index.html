@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d0f12">
+<title>Race Ready</title>
+<style>
+:root{--bg:#0d0f12;--card:#171a1f;--card2:#111419;--line:#2a3039;--muted:#9ca4af;--accent:#d9ff3f;--text:#f7f8fa;--good:#79e08b}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{max-width:760px;margin:auto;padding:18px 15px 105px}
+header{padding:8px 2px 14px}.brand{font-size:12px;font-weight:900;letter-spacing:2px;color:var(--accent)}
+h1{margin:5px 0 2px;font-size:32px;letter-spacing:-1.2px}.muted{color:var(--muted)}.small{font-size:12px}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;position:sticky;top:0;background:rgba(13,15,18,.96);z-index:10;padding:8px 0 10px}
+.tab{border:1px solid var(--line);background:#15191f;color:var(--muted);border-radius:10px;padding:9px 3px;font-size:11px;font-weight:800}.tab.active{background:var(--accent);color:#101114;border-color:var(--accent)}
+.view{display:none}.view.active{display:block}.weekbar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:10px 0 14px}
+.daybtn{border:1px solid var(--line);background:#15191f;color:var(--muted);border-radius:11px;padding:9px 2px;font-size:10px;text-align:center}.daybtn strong{display:block;font-size:13px;color:var(--text);margin-top:3px}.daybtn.active{border-color:var(--accent)}.daybtn.active strong{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin:10px 0}.optional{border-style:dashed}
+.tag{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--accent);font-weight:900}
+.card h2{font-size:19px;margin:5px 0}.card h3{font-size:15px;margin:4px 0 9px}
+.item{padding:9px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.35}.item:first-of-type{border-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}.setrow{display:grid;grid-template-columns:30px 1fr 1fr;gap:7px;align-items:center;margin:7px 0}
+input,textarea,select{width:100%;background:#0e1115;color:white;border:1px solid #353c46;border-radius:9px;padding:10px;font-size:16px}textarea{min-height:76px;resize:vertical}
+button.primary{width:100%;background:var(--accent);color:#111;border:0;border-radius:11px;padding:13px;font-weight:900;font-size:15px;margin-top:9px}
+button.secondary{width:100%;background:#242a33;color:white;border:0;border-radius:11px;padding:12px;font-weight:800;margin-top:8px}
+.hero{background:linear-gradient(145deg,#1b2027,#12151a);padding:18px}.hero h2{font-size:25px}.status{display:inline-block;border:1px solid #39414b;border-radius:999px;padding:5px 9px;font-size:11px;margin-top:5px}
+.done{color:var(--good)} .navrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.stat{background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:13px}.stat b{display:block;font-size:23px;margin-top:4px}
+.historyItem{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line)}.historyItem:first-child{border-top:0}
+.footerhint{text-align:center;color:var(--muted);font-size:11px;margin:18px 0}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand">RACE READY</div><h1>Pro Class Build</h1><div class="muted">90-minute race engine • strength • CrossFit • FBB</div></header>
+
+<nav class="tabs">
+<button class="tab active" data-view="today">Today</button>
+<button class="tab" data-view="week">Week</button>
+<button class="tab" data-view="history">History</button>
+<button class="tab" data-view="progress">Progress</button>
+<button class="tab" data-view="settings">Settings</button>
+</nav>
+
+<section id="today" class="view active">
+<div class="weekbar" id="weekbar"></div>
+<div id="workout"></div>
+</section>
+
+<section id="week" class="view">
+<div class="card hero"><div class="tag">This Week</div><h2>Launch Week</h2><div class="muted">Thursday–Saturday • first taste of the new Race Ready format</div></div>
+<div id="weeklist"></div>
+</section>
+
+<section id="history" class="view">
+<div class="card"><div class="tag">Training History</div><h2>Completed Sessions</h2><div id="historyList" class="muted">Complete a workout and it will appear here.</div></div>
+</section>
+
+<section id="progress" class="view">
+<div class="card"><div class="tag">Progress</div><h2>Training Snapshot</h2>
+<div class="statgrid"><div class="stat"><span class="muted small">Completed</span><b id="completedCount">0</b></div><div class="stat"><span class="muted small">Avg RPE</span><b id="avgRpe">—</b></div></div></div>
+<div class="card"><div class="tag">PR / Performance Notes</div><h2>What we're building toward</h2><div class="item">90-minute Pro-class durability</div><div class="item">Repeatable hard efforts late in races</div><div class="item">Strength + muscle without sacrificing engine</div><div class="item">CrossFit skill capacity under fatigue</div></div>
+</section>
+
+<section id="settings" class="view">
+<div class="card"><div class="tag">Data</div><h2>Backup & Restore</h2><div class="muted small">Logs live on this device. Export a backup periodically so your training history isn't trapped on one phone.</div>
+<button class="secondary" onclick="exportData()">Export Backup</button>
+<label class="secondary" style="display:block;text-align:center;cursor:pointer">Restore Backup<input id="restore" type="file" accept=".json" style="display:none"></label>
+<button class="secondary" onclick="clearData()">Clear Training Data</button></div>
+<div class="card"><div class="tag">Programming</div><h2>Import Future Weeks</h2><div class="muted small">Future Race Ready programming can be imported without rebuilding the app.</div>
+<label class="secondary" style="display:block;text-align:center;cursor:pointer">Import Programming<input id="programImport" type="file" accept=".json" style="display:none"></label></div>
+</section>
+
+<div class="footerhint">Race Ready • Practice skills. Build horsepower. Race for 90.</div>
+</div>
+
+<script>
+const baseProgram={
+thu:{dow:'THU',name:'Hybrid CrossFit',theme:'Power + Repeatable Output',blocks:[
+{tag:'Build Readiness',title:'8 min',items:['2 rounds: 8 empty-bar hang muscle cleans','6 front-rack reverse lunges','8 scap pull-ups','10 alternating box step-ups','30 sec easy SkiErg','Then 2–3 progressive clean sets']},
+{tag:'Olympic Power',title:'Every 2:00 × 6',items:['2 Hang Power Cleans','1 Power Clean from floor','1 Front Squat','Build from RPE 6 toward 7–8'],log:'weight',sets:6},
+{tag:'Engine',title:'Every 4:00 × 5',items:['12/10 SkiErg calories','8 DB Box Step-Overs — 4/leg','6 Toes-to-Bar','6 Burpees over DB','Rest remainder of 4:00. Keep Round 5 close to Round 1.'],log:'round',sets:5},
+{tag:'Durability',title:'3 quality rounds',items:['10–12 Banded Good Mornings','8 Peterson Step-Ups / side','15–20 Tib Raises']}
+]},
+fri:{dow:'FRI',name:'Full-Body Strength + FBB',theme:'Horsepower + Armor',blocks:[
+{tag:'Build Readiness',title:'7 min',items:['2 rounds: 8 goblet squats','8 ring rows','8 DB RDLs','8 push-ups','20-sec dead hang']},
+{tag:'Strength A',title:'4 rounds each',items:['Back Squat — 5 reps @ RPE 7–8','Bench Press — 6 reps @ RPE 7–8'],log:'dual',sets:4},
+{tag:'FBB Builder',title:'3 rounds',items:['8 DB Romanian Deadlifts','8 Half-Kneeling Landmine Press / side','8–10 Ring Rows — controlled tempo']},
+{tag:'Short Engine',title:'AMRAP 8',items:['8/6 Assault Bike calories','8 alternating DB front-rack reverse lunges','8 hand-release push-ups','Smooth continuous work — RPE ~7'],log:'score'},
+{tag:'Fill the Sleeves',title:'2–3 quality rounds',items:['10–12 EZ-Bar Curls','10–12 DB Skull Crushers','12–15 DB Lateral Raises','15–20 Leg Extensions']}
+]},
+sat:{dow:'SAT',name:'Race Ready Playground',theme:'Garage CrossFit Is Back',blocks:[
+{tag:'Build Readiness',title:'7 min',items:['2 rounds: 200m easy Air Runner','6 KB deadlifts','5 burpees','5 box jump step-downs','5 strict pull-ups']},
+{tag:'Power Primer',title:'EMOM × 8',items:['Odd: 3 Push Jerks','Even: 3 Box Jumps','Moderate load. Explosive reps only.']},
+{tag:'Saturday Adventure',title:'AMRAP 30',items:['400m Air Runner','10 Pull-Ups','12 American KB Swings — 53 lb','8 DB Push Press — 4/arm','1 × 100-lb Sandbag Clean Over 48" Stacked Boxes','50 Double-Unders','Sustainable rhythm. Do not redline early.'],log:'score'},
+{tag:'Weekend Pump',title:'8 min',items:['12 Hammer Curls','12 DB Rolling Triceps Extensions','15 Reverse Nordics','15–20 Standing Calf Raises']},
+{tag:'Optional Skill',title:'10–15 min — Toes-to-Bar / Kipping',items:['Small quality sets of TTB','Practice kip timing and rhythm','Stop before grip or technique deteriorates'],optional:true}
+]}};
+let program=JSON.parse(localStorage.getItem('rrProgram')||'null')||baseProgram;
+let logs=JSON.parse(localStorage.getItem('rrLogsV2')||'{}');
+let selected='thu';
+const order=['thu','fri','sat'];
+
+function save(){localStorage.setItem('rrLogsV2',JSON.stringify(logs))}
+function val(id){return logs[id]||''}
+function field(id,ph,type='text'){return `<input type="${type}" placeholder="${ph}" value="${String(val(id)).replaceAll('"','&quot;')}" oninput="logs['${id}']=this.value;save()">`}
+function weekbar(){
+ const labels=[['MON','—'],['TUE','—'],['WED','—'],['THU','Hybrid'],['FRI','Strength'],['SAT','Race'],['SUN','Off']];
+ document.getElementById('weekbar').innerHTML=labels.map((x,i)=>{
+ let key=i===3?'thu':i===4?'fri':i===5?'sat':'';
+ return `<div class="daybtn ${key===selected?'active':''}" ${key?`onclick="selected='${key}';renderWorkout()"`:''}>${x[0]}<strong>${x[1]}</strong></div>`}).join('');
+}
+function renderWorkout(){
+ weekbar(); const p=program[selected]; let html=`<div class="card hero"><div class="tag">${p.dow} • ${p.name}</div><h2>${p.theme}</h2><span class="status ${logs[selected+'_done']?'done':''}">${logs[selected+'_done']?'Completed ✓':'Ready to train'}</span></div>`;
+ p.blocks.forEach((b,bi)=>{
+ const id=selected+'_'+bi; html+=`<div class="card ${b.optional?'optional':''}"><div class="tag">${b.tag}${b.optional?' • OPTIONAL':''}</div><h2>${b.title}</h2>${b.items.map(x=>`<div class="item">${x}</div>`).join('')}`;
+ if(b.log==='weight') for(let i=1;i<=b.sets;i++) html+=`<div class="setrow"><span>${i}</span>${field(id+'_w'+i,'Weight')}${field(id+'_r'+i,'Reps')}</div>`;
+ if(b.log==='round') for(let i=1;i<=b.sets;i++) html+=`<div class="setrow"><span>${i}</span>${field(id+'_t'+i,'Round time')}${field(id+'_n'+i,'Notes')}</div>`;
+ if(b.log==='dual') for(let i=1;i<=b.sets;i++) html+=`<div class="setrow"><span>${i}</span>${field(id+'_sq'+i,'Squat wt')}${field(id+'_bp'+i,'Bench wt')}</div>`;
+ if(b.log==='score') html+=`<div class="grid2">${field(id+'_score','Score / rounds + reps')}${field(id+'_rpe','RPE','number')}</div>`;
+ html+='</div>';
+ });
+ html+=`<div class="card"><div class="tag">Session Log</div><h2>Finish the Session</h2><div class="grid2">${field(selected+'_sessionRpe','Session RPE','number')}${field(selected+'_duration','Minutes','number')}</div><textarea placeholder="How did it feel? Scaling, wins, issues..." oninput="logs['${selected}_notes']=this.value;save()">${val(selected+'_notes')}</textarea><button class="primary" onclick="completeWorkout()">Complete Workout</button><div class="navrow"><button class="secondary" onclick="move(-1)">← Previous</button><button class="secondary" onclick="move(1)">Next →</button></div></div>`;
+ document.getElementById('workout').innerHTML=html; renderStats();
+}
+function move(n){let i=order.indexOf(selected);i=Math.max(0,Math.min(order.length-1,i+n));selected=order[i];renderWorkout()}
+function completeWorkout(){logs[selected+'_done']=new Date().toISOString();save();renderWorkout();showView('history')}
+function renderWeek(){document.getElementById('weeklist').innerHTML=order.map(k=>{let p=program[k];return `<div class="card" onclick="selected='${k}';showView('today');renderWorkout()"><div class="tag">${p.dow}</div><h2>${p.name}</h2><div class="muted">${p.theme}</div><div class="status ${logs[k+'_done']?'done':''}">${logs[k+'_done']?'Completed ✓':'Open workout →'}</div></div>`}).join('')}
+function renderHistory(){let done=order.filter(k=>logs[k+'_done']);document.getElementById('historyList').innerHTML=done.length?done.slice().reverse().map(k=>`<div class="historyItem"><div><b>${program[k].dow} — ${program[k].name}</b><div class="muted small">${new Date(logs[k+'_done']).toLocaleString()}</div></div><div>${val(k+'_sessionRpe')?'RPE '+val(k+'_sessionRpe'):''}</div></div>`).join(''):'Complete a workout and it will appear here.'}
+function renderStats(){let done=order.filter(k=>logs[k+'_done']);document.getElementById('completedCount').textContent=done.length;let rs=done.map(k=>Number(val(k+'_sessionRpe'))).filter(Boolean);document.getElementById('avgRpe').textContent=rs.length?(rs.reduce((a,b)=>a+b,0)/rs.length).toFixed(1):'—';renderHistory();renderWeek()}
+function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===id));renderStats()}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showView(t.dataset.view));
+function exportData(){let blob=new Blob([JSON.stringify({version:2,logs,program},null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='race-ready-backup.json';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('restore').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);logs=d.logs||{};if(d.program){program=d.program;localStorage.setItem('rrProgram',JSON.stringify(program))}save();renderWorkout();alert('Race Ready backup restored.')}catch{alert('That backup file could not be read.')}};r.readAsText(f)}
+document.getElementById('programImport').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);program=d.program||d;localStorage.setItem('rrProgram',JSON.stringify(program));renderWorkout();alert('Programming imported.')}catch{alert('That programming file could not be read.')}};r.readAsText(f)}
+function clearData(){if(confirm('Clear all Race Ready workout logs on this device?')){logs={};save();renderWorkout()}}
+renderWorkout();renderWeek();renderHistory();renderStats();
+</script>
+</body></html>

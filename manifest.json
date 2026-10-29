@@ -1,0 +1,8 @@
+{
+  "name": "Race Ready",
+  "short_name": "Race Ready",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0f12",
+  "theme_color": "#0d0f12"
+}
