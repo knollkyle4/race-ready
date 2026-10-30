@@ -1,0 +1,86 @@
+{
+  "program": {
+    "meta": {
+      "title": "Cycle 1 · Week 1",
+      "subtitle": "November 2–7, 2026 · Constantly varied strength, CrossFit and Pro-class engine development",
+      "weekId": "2026-11-02"
+    },
+    "2026-11-02_mon": {
+      "dow": "MON",
+      "name": "Full-Body Strength + FBB",
+      "theme": "Speed Strength + Athletic Armor",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8 min","items":["2 rounds: 45 sec easy BikeErg","10 Russian KB swings — light/moderate","6 goblet squat prying reps","8 band pull-aparts","6 alternating step-ups / leg","Then 3 progressive squat sets — last set fast"]},
+        {"tag":"Primary Strength","title":"Back Squat with Chains · 10 × 2","items":["Every 75–90 sec","Use a load that stays explosive — roughly RPE 6–7","Accelerate every rep; no grinders","Chain setup stays consistent across all working sets"],"log":"weight","sets":10},
+        {"tag":"FBB Builder","title":"3 quality rounds","items":["8 Half-Kneeling Landmine Press / side","5–8 Weighted or Strict Pull-Ups","8 DB Step-Ups / side — controlled lower"],"log":"notes","noteLabel":"Loads / pull-up setup / notes"},
+        {"tag":"Posterior + Trunk","title":"2–3 rounds","items":["10–12 Leg Curls","8 Suitcase DB RDL / side","10–15 GHD Sit-Ups"],"log":"notes","noteLabel":"Loads / notes"},
+        {"tag":"Fill the Sleeves","title":"6–8 min","items":["12–15 DB Lateral Raises","10–12 Hammer Curls","10–15 Close-Grip Push-Ups","12–15 Rear-Delt Raises","Move continuously with clean reps; stop 1–2 reps before failure"],"log":"notes","noteLabel":"Loads / reps / notes"},
+        {"tag":"Optional Skill","title":"10–15 min · Handstand / HSPU","items":["Quality wall-facing handstand holds or controlled HSPU sets","Keep reps crisp; stop before shoulder fatigue changes mechanics"],"optional":true,"log":"notes"}
+      ]
+    },
+    "2026-11-03_tue": {
+      "dow": "TUE",
+      "name": "Hybrid CrossFit / Engine",
+      "theme": "Aerobic Gymnastics Chipper",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8 min","items":["2 rounds: 250m easy BikeErg","20 single-unders + 10 easy double-unders","6 hanging knee raises","6 alternating DB hang snatches — light","6 box step-overs","Then 2 small TTB sets + 2 relaxed DU sets"]},
+        {"tag":"Gymnastics Touch","title":"5 min quality","items":["2–3 small sets Toes-to-Bar","2–3 sets Double-Unders","Practice rhythm only — do not create fatigue"],"log":"notes","noteLabel":"TTB / DU notes"},
+        {"tag":"Engine","title":"3 rounds for time + buy-out","items":["500m BikeErg","40 Double-Unders","12 Alternating DB Snatches","10 Toes-to-Bar","8 DB Box Step-Overs","After Round 3: 1000m BikeErg","Intent: sustainable aerobic pressure; smooth gymnastics and transitions","Cap: 30 min"],"log":"time"},
+        {"tag":"Armor","title":"2 quality rounds","items":["20–30 sec Copenhagen hold / side","15–20 Tib Raises","15–20 Band Face Pulls"],"log":"notes","noteLabel":"Notes"},
+        {"tag":"Optional Skill","title":"10–15 min · Rope","items":["Foot-lock practice and easy rope-climb singles","Stop well before grip failure"],"optional":true,"log":"notes"}
+      ]
+    },
+    "2026-11-04_wed": {
+      "dow": "WED",
+      "name": "Full-Body Strength + FBB",
+      "theme": "Heavy Bench + Short Violence",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8 min","items":["2 rounds: 45 sec easy RowErg","8 scap push-ups","10 band pull-aparts","8 empty-DB reverse lunges","8 glute bridges","Then 3 progressive bench sets"]},
+        {"tag":"Primary Strength","title":"Bench Press · Heavy 3 + Back-Offs","items":["Build to 1 strong triple @ RPE 8–8.5","Then 3 × 5 at about 90% of today's triple load","No missed reps; repeatable bar speed"],"log":"weight","sets":4},
+        {"tag":"FBB Builder","title":"3 rounds","items":["8 Front-Foot-Elevated Reverse Lunges / side","10–12 Chest-Supported DB Rows","10–12 DB Hip Thrusts"],"log":"notes","noteLabel":"Loads / notes"},
+        {"tag":"Short Violence","title":"AMRAP 8","items":["6 DB Devil Press","8 Heavy Goblet Squats","10/8 Assault Bike calories","Hard but controlled — avoid a first-round blowup"],"log":"score"},
+        {"tag":"Pump + Lower-Leg","title":"21-15-9 + calves","items":["EZ-Bar Curls","DB Rolling Triceps Extensions","After each round: 15–20 Standing Calf Raises","Quality contractions; no need to annihilate the calves"],"log":"notes","noteLabel":"Loads / calf setup / notes"},
+        {"tag":"Optional Skill","title":"10–15 min · Double-Under or Handstand","items":["Choose the skill that feels freshest","Practice quality, not fatigue"],"optional":true,"log":"notes"}
+      ]
+    },
+    "2026-11-05_thu": {
+      "dow": "THU",
+      "name": "Hybrid CrossFit / Engine",
+      "theme": "Power Snatch + Sprint Couplets",
+      "blocks": [
+        {"tag":"Build Readiness","title":"9 min","items":["2 rounds: 200m easy RowErg","6 snatch-grip RDLs","6 muscle snatches","6 overhead squats or snatch-grip press-in-squat","5 burpees over empty bar","Then 3 progressive power-snatch sets"]},
+        {"tag":"Olympic Power","title":"Every 90 sec × 10","items":["1 Power Snatch","Build to a strong technical single","No misses. Finish with speed and confidence, not a max."],"log":"notes","noteLabel":"Loads by set / top load / notes"},
+        {"tag":"Sprint Metcon","title":"4 rounds for time","items":["10/8 RowErg calories","8 Burpees Over Bar","6 Power Snatches — light/moderate cycling load","Target: 8–12 min · Cap: 14 min","Choose a snatch load that keeps the workout fast"],"log":"time"},
+        {"tag":"Recovery Builder","title":"2–3 easy quality rounds","items":["8–10 Reverse Nordics","10–12 Ring Rows","15–20 Band Triceps Pressdowns","20–30 sec Dead Hang"],"log":"notes","noteLabel":"Notes / scaling"},
+        {"tag":"Optional Skill","title":"10–15 min · Rope / Pull-Up Technique","items":["Easy rope singles, strict pull-up mechanics or controlled kip practice","Do not turn this into extra conditioning"],"optional":true,"log":"notes"}
+      ]
+    },
+    "2026-11-06_fri": {
+      "dow": "FRI",
+      "name": "Full-Body Strength + FBB",
+      "theme": "Heavy Hinge + Upper-Body Armor",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8 min","items":["2 rounds: 45 sec easy SkiErg","10 Russian KB swings","6 bodyweight single-leg RDL reaches / side","8 push-ups","8 ring rows","Then 3 progressive deadlift sets"]},
+        {"tag":"Primary Strength","title":"Deadlift · 5 × 3","items":["RPE 7.5–8 across working sets","Reset and brace each rep","Heavy training strength — no grinders"],"log":"weight","sets":5},
+        {"tag":"FBB Builder","title":"3 rounds","items":["8–10 Incline DB Bench Press","8 Single-Leg Squat to Box / side","10 1-Arm DB Rows / side"],"log":"notes","noteLabel":"Loads / box height / notes"},
+        {"tag":"Shoulders + Hamstrings","title":"8 min density","items":["8–10 Seated DB Strict Press","10–12 Leg Curls","12–15 Rear-Delt Raises","Cycle quality rounds; leave 1–2 reps in reserve"],"log":"notes","noteLabel":"Loads / rounds / notes"},
+        {"tag":"Grip + Arms","title":"2–3 rounds","items":["30–40 sec Heavy Suitcase Hold / side","10–12 Zottman Curls","15–20 Band Triceps Pressdowns"],"log":"notes","noteLabel":"Loads / notes"},
+        {"tag":"Optional Skill","title":"10–15 min · Olympic Technique","items":["Light clean or snatch technique only","Stay crisp and easy after the hinge work"],"optional":true,"log":"notes"}
+      ]
+    },
+    "2026-11-07_sat": {
+      "dow": "SAT",
+      "name": "Hybrid CrossFit / Race Ready",
+      "theme": "Three-Event Saturday",
+      "blocks": [
+        {"tag":"Build Readiness","title":"9 min","items":["2 rounds: 45 sec easy SkiErg","6 DB front squats","4–6 pike or strict HSPU prep reps","25-ft light carry down + back","5 sandbag bear-hug squats","Then 2 short Assault Bike pickups"]},
+        {"tag":"Event 1","title":"10-min ascending ladder","items":["2-4-6-8… DB Front Squats","2-4-6-8… HSPU","After each completed round: 6/5 SkiErg calories","Score total completed ladder reps + Ski calories; scale HSPU consistently"],"log":"score"},
+        {"tag":"Reset","title":"5 min","items":["Walk, breathe, drink and set the carry lane","The rest is part of the test — take the full five minutes"]},
+        {"tag":"Event 2","title":"5 rounds for time · cap 10","items":["25 ft 100-lb Sandbag Bear-Hug Carry","25 ft Heavy DB Farmer Carry","25 ft 100-lb Sandbag Bear-Hug Carry","25 ft Heavy DB Farmer Carry","Fast feet, strong trunk, clean turns"],"log":"time"},
+        {"tag":"Reset","title":"5 min","items":["Easy movement and breathing","Prepare Assault Bike"]},
+        {"tag":"Event 3","title":"Assault Bike · 10 rounds","items":["15 sec HARD","45 sec easy spin","Record calories for each hard interval when practical","Goal: violent but repeatable output — fight the drop-off"],"log":"round","sets":10},
+        {"tag":"Optional Pump","title":"6–8 min if you want it","items":["12–15 Hammer Curls","12–15 Band Triceps Pressdowns","15–20 Leg Extensions","15–20 Calf Raises"],"optional":true,"log":"notes"}
+      ]
+    }
+  }
+}
