@@ -1,0 +1,22 @@
+name: Race Ready Calendar Upgrade
+on:
+  push:
+    paths:
+      - '.github/scripts/add_calendar.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply calendar upgrade
+        run: python .github/scripts/add_calendar.py
+      - name: Commit app update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Upgrade Race Ready to dated training calendar"
+          git push
