@@ -8,4 +8,4 @@ if 'rr-calendar-v1' in s:
     raise SystemExit(0)
 raise SystemExit('Expected Race Ready calendar before v3.2.1 patch')
 
-# deployment trigger: v3.2.1 multi-week calendar patch
+# deployment trigger: corrected v3.2.1 multi-week calendar patch
