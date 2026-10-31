@@ -7,3 +7,5 @@ if 'rr-calendar-v1' in s:
     runpy.run_path('.github/scripts/patch_v321.py', run_name='__main__')
     raise SystemExit(0)
 raise SystemExit('Expected Race Ready calendar before v3.2.1 patch')
+
+# deployment trigger: v3.2.1 multi-week calendar patch
