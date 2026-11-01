@@ -1,0 +1,84 @@
+{
+  "program": {
+    "meta": {
+      "title": "Cycle 1 · Week 2",
+      "subtitle": "November 9–14, 2026 · CHAD1000X special event week",
+      "weekId": "2026-11-09"
+    },
+    "2026-11-09_mon": {
+      "dow": "MON",
+      "name": "Full Body | Bench Emphasis",
+      "theme": "Bench + Full-Body Strength",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8–10 min · 2 rounds","items":["8 KB deadlifts — light/moderate","8 alternating reverse lunges total","8 scap push-ups","10 band face pulls","6/side dead bugs"]},
+        {"tag":"Bench Ramp-Up","title":"4 sets","items":["Empty bar × 10","~40% × 8","~55% × 5","~65% × 3"]},
+        {"tag":"Primary Strength","title":"Bench Press · Every 2:30 × 6","items":["4 reps @ RPE 7–8","No grinders"],"log":"weight","sets":6},
+        {"tag":"Back + Posterior Chain","title":"3 rounds","items":["Chest-supported DB row × 10–12","DB kickstand RDL × 8/side"],"log":"notes"},
+        {"tag":"Quads + Shoulders","title":"3 rounds","items":["Heel-elevated goblet squat × 10","Seated Arnold press × 8–10","Keep squat moderate — expose the quads without creating soreness before CHAD"],"log":"notes"},
+        {"tag":"Arms + Core","title":"3 rounds","items":["Ring biceps curl × 10–12","Band triceps pressdown × 15–20","Hollow-body rocks × 15–20"],"log":"notes"},
+        {"tag":"Optional Wildcard","title":"6–8 min · Rope Skill","items":["Low-volume rope-climb practice","Focus on efficient foot lock and technique","Stay well away from grip failure"],"optional":true,"log":"notes"}
+      ]
+    },
+    "2026-11-10_tue": {
+      "dow": "TUE",
+      "name": "Hybrid CrossFit | Power + Aerobic/Gymnastics",
+      "theme": "Hang Power Snatch + Controlled Hybrid",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8–10 min · 2 rounds","items":["45 sec easy BikeErg","8 PVC/empty-bar pass-throughs","8 empty-bar RDLs","5 muscle snatches","5 overhead squats","6 scap pull-ups","30 single-unders"]},
+        {"tag":"Snatch Ramp-Up","title":"Technique prep","items":["Empty bar: 5 hang muscle snatches + 5 hang power snatches","Light load × 3 hang power snatches","Moderate-light load × 2"]},
+        {"tag":"Olympic Power","title":"Hang Power Snatch · Every 90 sec × 7","items":["2 reps","Moderate load","Fast, technically clean reps"],"log":"notes","sets":7},
+        {"tag":"Engine","title":"20-min Quality AMRAP","items":["10/8 cal BikeErg","8 ring push-ups","30 double-unders","6 toes-to-bar","Target RPE 6–7","Intentionally controlled — Wednesday's 1,000 step-ups are the major stressor"],"log":"score"},
+        {"tag":"Short Trunk / Grip","title":"5–6 min · alternate","items":["30 sec active hang","8/side Pallof press","No additional optional work — stop here before CHAD"],"log":"notes"}
+      ]
+    },
+    "2026-11-11_wed": {
+      "dow": "WED",
+      "name": "CHAD1000X | Special Event",
+      "theme": "1,000 Box Step-Ups",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8–10 min · 2 rounds","items":["60 sec easy BikeErg","10/leg bodyweight step-ups","10 glute bridges","10 calf raises","8 bodyweight squats"]},
+        {"tag":"CHAD Specific Prep","title":"Low-fatigue rehearsal","items":["20 step-ups at planned box height — bodyweight","Rest ~60 sec","10–20 step-ups using planned CHAD load/ruck","Brief transition, then start","Goal: be physically ready without wasting energy before 1,000 reps"]},
+        {"tag":"Special Event","title":"CHAD1000X · 1,000 box step-ups for time","items":["Use planned box height and loading/scaling","Strategy: don't race the opening 200–300 reps","Establish a sustainable cadence early and minimize unnecessary transitions","Nothing else programmed — CHAD is enough"],"log":"time"},
+        {"tag":"Record","title":"Event details","items":["Time","Box height","Load/ruck","Scaling","RPE","Pacing notes","Where fatigue became limiting"],"log":"notes"}
+      ]
+    },
+    "2026-11-12_thu": {
+      "dow": "THU",
+      "name": "Recovery Hybrid | Restore",
+      "theme": "Post-CHAD Recovery",
+      "blocks": [
+        {"tag":"Easy Aerobic","title":"20–25 min","items":["Choose SkiErg, BikeErg, or alternate between them","First 5 min: RPE 2–3 — this serves as the warm-up","Remainder: RPE 3–4"]},
+        {"tag":"Recovery Circuit","title":"3 easy rounds","items":["DB pullover × 10–12","Band rear-delt pull-apart × 15–20","Light reverse curl × 12","Dead bug with full exhale × 6/side"],"log":"notes"},
+        {"tag":"Mobility","title":"5–8 min","items":["Quads","Calves","Hip flexors","Glutes","T-spine","No optional piece — recovery is Thursday's job"],"log":"notes"}
+      ]
+    },
+    "2026-11-13_fri": {
+      "dow": "FRI",
+      "name": "Full Body | Hinge Emphasis",
+      "theme": "RDL + Full-Body Strength",
+      "blocks": [
+        {"tag":"Recovery Gate","title":"Before training","items":["If CHAD soreness remains substantial, reduce RDL loading and/or accessory volume"]},
+        {"tag":"Build Readiness","title":"8–10 min · 2 rounds","items":["45 sec easy SkiErg","10 glute bridges","8 bodyweight squats","8 ring rows","8 hip-hinge drills","3/side shoulder CARs"]},
+        {"tag":"RDL Ramp-Up","title":"4 sets","items":["Empty bar × 10","~40% of working weight × 8","~60% × 5","~75% × 3","Use ramp-up to assess recovery from CHAD before committing to working load"]},
+        {"tag":"Primary Strength","title":"Barbell RDL · 5 × 6","items":["RPE 7"],"log":"weight","sets":5},
+        {"tag":"Chest + Quads","title":"3 rounds","items":["Incline DB bench press × 8–10","Front-foot-elevated split squat × 8/side"],"log":"notes"},
+        {"tag":"Back + Shoulders","title":"3 rounds","items":["Supinated ring row × 10–12","Bottoms-up KB press × 8/side"],"log":"notes"},
+        {"tag":"Arms + Core / Grip","title":"3 rounds","items":["Cross-body hammer curl × 10/side","DB Tate press × 10–12","Suitcase carry × 30–40 sec/side","No optional piece needed coming off CHAD"],"log":"notes"}
+      ]
+    },
+    "2026-11-14_sat": {
+      "dow": "SAT",
+      "name": "Hybrid CrossFit | Race Ready + Fill the Sleeves",
+      "theme": "Push Press + 24-Min Race Hybrid",
+      "blocks": [
+        {"tag":"Build Readiness","title":"8–10 min · 2 rounds","items":["150 m easy SkiErg","8 KB deadlifts","6 push-ups","6 ring/scap pull-ups","6 light DB deadlifts","8 light KB swings","20–25 ft sandbag bear-hug march"]},
+        {"tag":"Push Press Ramp-Up","title":"4 sets","items":["Empty bar × 8","Light load × 5","Moderate-light load × 3","Final ramp set × 3 near planned working weight"]},
+        {"tag":"Power Primer","title":"Push Press · Every 90 sec × 6","items":["3 reps","Explosive, technically clean","Moderate load"],"log":"notes","sets":6},
+        {"tag":"AMRAP Movement Check","title":"2–3 min transition","items":["2–3 chest-to-bar pull-ups","2 burpee DB deadlifts","Movement check only — not another workout"]},
+        {"tag":"Race Ready Engine","title":"24-min AMRAP","items":["250 m SkiErg","6 burpee DB deadlifts","8 chest-to-bar pull-ups","10 American KB swings","25 ft out + 25 ft back sandbag bear-hug carry","Intent: sustained output — don't blow up the first 8 minutes"],"log":"score"},
+        {"tag":"Fill the Sleeves","title":"8–10 min · 3 rounds","items":["Incline DB curl × 10–12","Ring skull crusher × 10–12","Band lateral raise × 12–15","Short rests — chase the pump without turning it into another conditioning event","Programmed — not optional"],"log":"notes"},
+        {"tag":"Optional Wildcard","title":"Easy Run Exposure · only if CHAD recovery is excellent","items":["800 m easy/moderate","Rest 2–3 min","800 m easy/moderate","Not for time"],"optional":true,"log":"notes"}
+      ]
+    }
+  }
+}
