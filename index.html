@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0d0f12">
 <title>Race Ready</title>
-<meta name="rr-build" content="3.2.1">
+<meta name="rr-build" content="3.2.2">
 <style>
 :root{--bg:#0d0f12;--card:#171a1f;--card2:#111419;--line:#2a3039;--muted:#9ca4af;--accent:#d9ff3f;--text:#f7f8fa;--good:#79e08b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -48,7 +48,7 @@ button.secondary{width:100%;background:#242a33;color:white;border:0;border-radiu
 <div class="pills"><button class="pill active" data-p="strength">Strength PRs</button><button class="pill" data-p="fitness">Fitness Records</button><button class="pill" data-p="benchmarks">Benchmark Metcons</button><button class="pill" data-p="podiums">Podiums</button></div><div id="progressPanel"></div>
 </section>
 <section id="settings" class="view">
-<div class="card"><div class="tag">App Updates</div><h2>Race Ready · 3.2.1</h2><p class="muted small">Honda Legends Podiums · six machine photos · live completion badges</p><button class="secondary" onclick="checkAppUpdate(this)">Check for Updates</button><p id="updateStatus" class="muted small" role="status" aria-live="polite">Updates use this same website and keep your saved records.</p><button id="applyUpdate" class="primary" style="display:none" onclick="refreshApp()">Refresh to Update</button></div>
+<div class="card"><div class="tag">App Updates</div><h2>Race Ready · 3.2.2</h2><p class="muted small">Dated programming accumulates · safe imports · earlier weeks preserved</p><button class="secondary" onclick="checkAppUpdate(this)">Check for Updates</button><p id="updateStatus" class="muted small" role="status" aria-live="polite">Updates use this same website and keep your saved records.</p><button id="applyUpdate" class="primary" style="display:none" onclick="refreshApp()">Refresh to Update</button></div>
 <div class="card"><div class="tag">Data</div><h2>Backup & Restore</h2><div class="muted small">V3 preserves the existing V2 workout-log storage key and adds records separately.</div><button class="secondary" onclick="exportData()">Export Backup</button><label class="secondary" style="display:block;text-align:center;cursor:pointer">Restore Backup<input id="restore" type="file" accept=".json" style="display:none"></label></div>
 <div class="card"><div class="tag">Programming</div><h2>Available Programming</h2><div class="muted small">Add dated Race Ready weeks to your calendar. Existing weeks stay in place; records and Podiums stay intact.</div><button class="primary" onclick="loadPublishedWeek('programming/cycle-1-week-1-2026-11-02.json','Cycle 1 · Week 1 · Nov 2–7')">Load Nov 2–7 to Calendar</button><div style="height:10px"></div><h2>Import Programming File</h2><div class="muted small">You can still import a programming JSON file manually.</div><label class="secondary" style="display:block;text-align:center;cursor:pointer">Import Programming<input id="programImport" type="file" accept=".json" style="display:none"></label></div>
 <div class="card"><div class="tag">Storage</div><h2>Local Data</h2><button class="secondary" onclick="clearData()">Clear Workout Logs</button></div>
@@ -78,14 +78,15 @@ let program=JSON.parse(localStorage.getItem(S.program)||'null')||baseProgram;
 let logs=JSON.parse(localStorage.getItem(S.logs)||'{}');
 let records=JSON.parse(localStorage.getItem(S.records)||'null')||{strength:{},fitness:{},benchmarks:{},podiums:{}};
 localStorage.setItem(S.schema,'3');
-let order=Object.keys(program).filter(k=>k!=='meta'),selected=order[0]||'thu',progressTab='strength';
+let order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>programDateKey(a).localeCompare(programDateKey(b))),selected=order[0]||'thu',progressTab='strength';
 let calendarCursor=new Date(2026,10,1);
 function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
 function save(){localStorage.setItem(S.logs,JSON.stringify(logs));localStorage.setItem(S.records,JSON.stringify(records))}
 function val(id){return logs[id]||''}
 function field(id,ph,type='text'){return `<input type="${type}" placeholder="${esc(ph)}" value="${esc(val(id))}" oninput="logs['${id}']=this.value;save()">`}
 function notes(id,label='Notes'){return `<textarea placeholder="${esc(label)}" oninput="logs['${id}']=this.value;save()">${esc(val(id))}</textarea>`}
-function weekbar(){const days=['MON','TUE','WED','THU','FRI','SAT','SUN'];document.getElementById('weekbar').innerHTML=days.map(d=>{let k=order.find(x=>program[x].dow===d);return `<div class="daybtn ${k===selected?'active':''}" ${k?`onclick="selected='${k}';renderWorkout()"`:''}>${d}<strong>${k?(logs[k+'_done']?'✓':program[k].name.split(' ')[0]):'—'}</strong></div>`}).join('')}
+function weekStart(date){if(!date)return '';let d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-(d.getUTCDay()+6)%7);return d.toISOString().slice(0,10)}
+function weekbar(){const days=['MON','TUE','WED','THU','FRI','SAT','SUN'],week=weekStart(programDateKey(selected));document.getElementById('weekbar').innerHTML=days.map(d=>{let k=order.find(x=>program[x].dow===d&&weekStart(programDateKey(x))===week);return `<div class="daybtn ${k===selected?'active':''}" ${k?`onclick="selected='${k}';renderWorkout()"`:''}>${d}<strong>${k?(logs[k+'_done']?'✓':esc(program[k].name.split(' ')[0])):'—'}</strong></div>`}).join('')}
 function blockLog(b,id){let h='';if(b.log==='weight')for(let i=1;i<=b.sets;i++)h+=`<div class="setrow"><span>${i}</span>${field(id+'_w'+i,'Weight')}${field(id+'_r'+i,'Reps')}</div>`;
 if(b.log==='round')for(let i=1;i<=b.sets;i++)h+=`<div class="setrow"><span>${i}</span>${field(id+'_t'+i,'Round time')}${field(id+'_n'+i,'Notes')}</div>`;
 if(b.log==='dual')for(let i=1;i<=b.sets;i++)h+=`<div class="setrow"><span>${i}</span>${field(id+'_sq'+i,'Squat wt')}${field(id+'_bp'+i,'Bench wt')}</div>`;
@@ -95,30 +96,53 @@ if(b.log==='notes')h+=notes(id+'_notes',b.noteLabel||'Notes / load / scaling');
 if(b.log&&b.log!=='notes')h+=notes(id+'_sectionNotes','Section notes — load, scaling, equipment, feel...');
 if(!b.log)h+=notes(id+'_sectionNotes','Notes — load, scaling, equipment, feel...');
 return h}
-function renderWorkout(){weekbar();let p=program[selected];if(!p){document.getElementById('workout').innerHTML='<div class="card">No workout loaded.</div>';return}let h=`<div class="card hero"><div class="tag">${p.dow} • ${p.name}</div><h2>${p.theme}</h2><span class="status ${logs[selected+'_done']?'done':''}">${logs[selected+'_done']?'Completed ✓':'Ready to train'}</span></div>`;
+function renderWorkout(){weekbar();let p=program[selected];if(!p){document.getElementById('workout').innerHTML='<div class="card">No workout loaded.</div>';return}let h=`<div class="card hero"><div class="tag">${esc(programDateKey(selected))} · ${p.dow} • ${esc(p.name)}</div><h2>${p.theme}</h2><span class="status ${logs[selected+'_done']?'done':''}">${logs[selected+'_done']?'Completed ✓':'Ready to train'}</span></div>`;
 p.blocks.forEach((b,bi)=>{let id=selected+'_'+bi;h+=`<div class="card ${b.optional?'optional':''}"><div class="tag">${b.tag}${b.optional?' • OPTIONAL':''}</div><h2>${b.title}</h2>${(b.items||[]).map(x=>`<div class="item">${esc(x)}</div>`).join('')}${blockLog(b,id)}</div>`});
 h+=`<div class="card"><div class="tag">Session Log</div><h2>Finish the Session</h2><div class="grid2">${field(selected+'_sessionRpe','Session RPE','number')}${field(selected+'_duration','Minutes','number')}</div>${notes(selected+'_notes','How did it feel? Scaling, wins, issues...')}<button class="primary" onclick="completeWorkout()">Complete Workout</button><div class="navrow"><button class="secondary" onclick="move(-1)">← Previous</button><button class="secondary" onclick="move(1)">Next →</button></div></div>`;
 document.getElementById('workout').innerHTML=h;renderStats()}
 function move(n){let i=order.indexOf(selected);i=Math.max(0,Math.min(order.length-1,i+n));selected=order[i];renderWorkout()}
 function completeWorkout(){logs[selected+'_done']=new Date().toISOString();save();renderWorkout();showView('history')}
-/* programDateKey upgraded in v3.2.1 */
+/* programDateKey upgraded in v3.2.2 */
 function calendarEvents(date){let out=[];if(date==='2026-11-11')out.push('CHAD1000X');return out}
 function renderCalendar(){let grid=document.getElementById('calendarGrid');if(!grid)return;let y=calendarCursor.getFullYear(),m=calendarCursor.getMonth();document.getElementById('calTitle').textContent=new Intl.DateTimeFormat('en-US',{month:'long',year:'numeric'}).format(calendarCursor);let first=new Date(y,m,1),start=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),prevDays=new Date(y,m,0).getDate(),cells=[];let today=new Date(),todayKey=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');for(let i=0;i<42;i++){let d=i-start+1,cy=y,cm=m,cd=d,out=false;if(d<1){cm=m-1;if(cm<0){cm=11;cy--}cd=prevDays+d;out=true}else if(d>days){cm=m+1;if(cm>11){cm=0;cy++}cd=d-days;out=true}let key=cy+'-'+String(cm+1).padStart(2,'0')+'-'+String(cd).padStart(2,'0'),pk=order.find(k=>programDateKey(k)===key),events=calendarEvents(key),done=pk&&logs[pk+'_done'];cells.push(`<div class="calDay ${out?'out':''} ${key===todayKey?'today':''} ${done?'done':''} ${pk?'clickable':''}" ${pk?`onclick="openCalendarWorkout('${pk}')"`:''}><div class="calNum">${cd}${done?' ✓':''}</div>${pk?`<div class="calWorkout">${esc(program[pk].name)}</div>`:''}${events.map(e=>`<div class="calEvent">${esc(e)}</div>`).join('')}</div>`)}grid.innerHTML=cells.join('')}
 function changeCalendarMonth(n){calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()+n,1);renderCalendar()}
 function openCalendarWorkout(k){selected=k;showView('today');renderWorkout()}
 function programDateKey(k){return program[k]?.date||(/^\d{4}-\d{2}-\d{2}/.exec(k)?.[0]||'')}
-function mergeProgramWeek(incoming){
-  const current=(program&&typeof program==='object')?program:{};
-  const next={...current};
-  Object.keys(incoming||{}).forEach(k=>{if(k!=='meta')next[k]=incoming[k]});
-  next.meta={...(current.meta||{}),...(incoming?.meta||{}),title:'Race Ready Training Calendar'};
-  program=next;
-  localStorage.setItem(S.program,JSON.stringify(program));
-  order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>(programDateKey(a)||'9999').localeCompare(programDateKey(b)||'9999'));
+function workoutDate(k,p){return p?.date||(/^\d{4}-\d{2}-\d{2}/.exec(k)?.[0]||'')}
+function validateProgram(input){
+  if(!input||typeof input!=='object'||Array.isArray(input))throw Error('Expected a programming object.');
+  const incoming=input.program||input,keys=Object.keys(incoming).filter(k=>k!=='meta'),seen=new Set();
+  if(!keys.length)throw Error('No workouts found.');
+  for(const k of keys){const p=incoming[k],date=workoutDate(k,p);
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(Date.parse(date+'T12:00:00Z'))||new Date(date+'T12:00:00Z').toISOString().slice(0,10)!==date)throw Error('Every workout needs a valid date.');
+    if(seen.has(date))throw Error('Import contains more than one workout for '+date+'.');seen.add(date);
+    const dow=['SUN','MON','TUE','WED','THU','FRI','SAT'][new Date(date+'T12:00:00Z').getUTCDay()];
+    if(!p||typeof p.name!=='string'||!p.name.trim()||p.dow!==dow||!Array.isArray(p.blocks)||p.blocks.some(b=>!b||typeof b!=='object'||!Array.isArray(b.items)))throw Error('Invalid workout for '+date+'.');
+  }
+  return incoming;
 }
-async function loadPublishedWeek(url,label){try{let r=await fetch(url+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error();let d=await r.json();let incoming=d.program||d;mergeProgramWeek(incoming);let first=Object.keys(incoming).filter(k=>k!=='meta').map(k=>incoming[k]?.date||(/^\d{4}-\d{2}-\d{2}/.exec(k)?.[0]||'')).find(Boolean);if(first){let x=new Date(first+'T12:00:00');calendarCursor=new Date(x.getFullYear(),x.getMonth(),1);selected=order.find(k=>programDateKey(k)===first)||selected}renderWorkout();renderCalendar();renderWeek();alert(label+' added to your calendar. Existing weeks, records and Podiums were preserved.')}catch(e){console.error(e);alert('Could not load the published week. Try again when connected.') }}
+function hasWorkoutLog(k){return Object.keys(logs).some(id=>id.startsWith(k+'_')&&logs[id]!==''&&logs[id]!=null)}
+function mergeProgramWeek(input){
+  const incoming=validateProgram(input),next={...program};let added=0,updated=0,protectedCount=0,first='';
+  for(const [key,p] of Object.entries(incoming)){if(key==='meta')continue;
+    const date=workoutDate(key,p);if(!first||date<first)first=date;
+    let target=Object.keys(next).find(k=>k!=='meta'&&workoutDate(k,next[k])===date);
+    if(target&&hasWorkoutLog(target)){protectedCount++;continue}
+    if(target)updated++;else{added++;target=/^[A-Za-z0-9_-]+$/.test(key)&&!Object.hasOwn(next,key)?key:date+'_'+p.dow.toLowerCase();let suffix=1;while(Object.hasOwn(next,target))target=date+'_'+p.dow.toLowerCase()+'_'+suffix++}
+    next[target]={...p,date};
+  }
+  next.meta={...(program.meta||{}),title:'Race Ready Training Calendar',subtitle:'All loaded weeks · select a date to train'};
+  // Save a recovery copy before the first migration; never remove existing logs or records.
+  if(!localStorage.getItem('rrCalendarBackupV322'))localStorage.setItem('rrCalendarBackupV322',JSON.stringify({version:3,program,logs,records}));
+  localStorage.setItem(S.program,JSON.stringify(next));
+  program=next;order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>programDateKey(a).localeCompare(programDateKey(b)));
+  return {added,updated,protectedCount,first};
+}
+function refreshProgramming(first){if(first){let x=new Date(first+'T12:00:00');calendarCursor=new Date(x.getFullYear(),x.getMonth(),1);selected=order.find(k=>programDateKey(k)===first)||selected}renderWorkout();renderWeek();renderHistory()}
+function programmingMessage(result){return result.added+' workouts added; '+result.updated+' existing dates refreshed. '+(result.protectedCount?result.protectedCount+' logged workouts kept unchanged. ':'')+'Earlier weeks, logs, records and Podiums preserved.'}
+async function loadPublishedWeek(url,label){try{let r=await fetch(url+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('Download failed.');let result=mergeProgramWeek(await r.json());refreshProgramming(result.first);alert(label+': '+programmingMessage(result))}catch(e){console.error(e);alert('Could not add programming: '+e.message+' Existing calendar data was kept.')}}
 
-function renderWeek(){renderCalendar();document.getElementById('weekTitle').textContent=program.meta?.title||'Current Week';document.getElementById('weekSubtitle').textContent=program.meta?.subtitle||'Race Ready';document.getElementById('weeklist').innerHTML=order.map(k=>{let p=program[k];return `<div class="card" onclick="selected='${k}';showView('today');renderWorkout()"><div class="tag">${p.dow}</div><h2>${p.name}</h2><div class="muted">${p.theme}</div><div class="status ${logs[k+'_done']?'done':''}">${logs[k+'_done']?'Completed ✓':'Open workout →'}</div></div>`}).join('')}
+function renderWeek(){renderCalendar();document.getElementById('weekTitle').textContent=program.meta?.title||'Current Week';document.getElementById('weekSubtitle').textContent=program.meta?.subtitle||'Race Ready';document.getElementById('weeklist').innerHTML=order.map(k=>{let p=program[k];return `<div class="card" onclick="selected='${k}';showView('today');renderWorkout()"><div class="tag">${esc(programDateKey(k))} · ${p.dow}</div><h2>${esc(p.name)}</h2><div class="muted">${p.theme}</div><div class="status ${logs[k+'_done']?'done':''}">${logs[k+'_done']?'Completed ✓':'Open workout →'}</div></div>`}).join('')}
 function renderHistory(){let done=order.filter(k=>logs[k+'_done']);document.getElementById('historyList').innerHTML=done.length?done.slice().reverse().map(k=>`<div class="historyItem"><div><b>${program[k].dow} — ${program[k].name}</b><div class="muted small">${new Date(logs[k+'_done']).toLocaleString()}</div></div><div>${val(k+'_sessionRpe')?'RPE '+esc(val(k+'_sessionRpe')):''}</div></div>`).join(''):'Complete a workout and it will appear here.'}
 function renderStats(){let done=order.filter(k=>logs[k+'_done']);document.getElementById('completedCount').textContent=done.length;let rs=done.map(k=>Number(val(k+'_sessionRpe'))).filter(Boolean);document.getElementById('avgRpe').textContent=rs.length?(rs.reduce((a,b)=>a+b,0)/rs.length).toFixed(1):'—';renderHistory();renderWeek()}
 function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===id));renderStats();if(id==='progress')renderProgress()}
@@ -148,10 +172,11 @@ function renderProgress(){document.querySelectorAll('.pill').forEach(b=>b.classL
 document.querySelectorAll('.pill').forEach(b=>b.onclick=()=>{progressTab=b.dataset.p;renderProgress()});
 function exportData(){let blob=new Blob([JSON.stringify({version:3,schema:3,logs,program,records},null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='race-ready-v3-backup.json';a.click();URL.revokeObjectURL(a.href)}
 document.getElementById('restore').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);logs=d.logs||{};records=d.records||records;if(d.program){program=d.program;localStorage.setItem(S.program,JSON.stringify(program));order=Object.keys(program).filter(k=>k!=='meta');selected=order[0]}save();renderWorkout();renderProgress();alert('Race Ready backup restored.')}catch{alert('That backup file could not be read.')}};r.readAsText(f)}
-document.getElementById('programImport').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);program=d.program||d;localStorage.setItem(S.program,JSON.stringify(program));order=Object.keys(program).filter(k=>k!=='meta');selected=order[0];renderWorkout();alert('Programming imported.')}catch{alert('That programming file could not be read.')}};r.readAsText(f)}
+document.getElementById('programImport').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let result=mergeProgramWeek(JSON.parse(r.result));refreshProgramming(result.first);alert(programmingMessage(result))}catch(error){alert('Could not add programming: '+error.message+' Existing calendar data was kept.')}finally{e.target.value=''}};r.readAsText(f)}
 async function checkAppUpdate(button){button.disabled=true;const status=document.getElementById('updateStatus');status.textContent='Checking the published version…';try{const url=new URL(location.href);url.hash='';url.searchParams.set('updateCheck',Date.now());const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('Unable to check');const html=await response.text();const remote=new DOMParser().parseFromString(html,'text/html').querySelector('meta[name="rr-build"]')?.content;const current=document.querySelector('meta[name="rr-build"]').content;if(remote&&remote!==current){status.textContent='Version '+remote+' is available. Save any open attempt form, then refresh.';document.getElementById('applyUpdate').style.display='block'}else if(remote===current){status.textContent='You have the latest published version ('+current+').'}else{status.textContent='The website is still serving an older release. Publishing may still be in progress.'}}catch{status.textContent='Could not check for updates. Check your connection and try again.'}finally{button.disabled=false}}
 function refreshApp(){const url=new URL(location.href);url.searchParams.set('v',Date.now());location.replace(url.href)}
 function clearData(){if(confirm('Clear workout logs only? Strength, fitness and benchmark records will be kept.')){logs={};save();renderWorkout()}}
+try{const missing={};for(const [k,p] of Object.entries(baseProgram)){if(k!=='meta'&&!order.some(id=>programDateKey(id)===p.date))missing[k]=p}if(Object.keys(missing).length)mergeProgramWeek(missing)}catch(error){console.error('Calendar recovery could not be saved',error)}
 renderWorkout();renderWeek();renderHistory();renderStats();renderProgress();
 if(location.hash==='#podiums'){progressTab='podiums';showView('progress')}
 </script></body></html>
