@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0d0f12">
 <title>Race Ready</title>
-<meta name="rr-build" content="3.2.2">
+<meta name="rr-build" content="3.2.3">
 <style>
 :root{--bg:#0d0f12;--card:#171a1f;--card2:#111419;--line:#2a3039;--muted:#9ca4af;--accent:#d9ff3f;--text:#f7f8fa;--good:#79e08b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -48,9 +48,9 @@ button.secondary{width:100%;background:#242a33;color:white;border:0;border-radiu
 <div class="pills"><button class="pill active" data-p="strength">Strength PRs</button><button class="pill" data-p="fitness">Fitness Records</button><button class="pill" data-p="benchmarks">Benchmark Metcons</button><button class="pill" data-p="podiums">Podiums</button></div><div id="progressPanel"></div>
 </section>
 <section id="settings" class="view">
-<div class="card"><div class="tag">App Updates</div><h2>Race Ready · 3.2.2</h2><p class="muted small">Dated programming accumulates · safe imports · earlier weeks preserved</p><button class="secondary" onclick="checkAppUpdate(this)">Check for Updates</button><p id="updateStatus" class="muted small" role="status" aria-live="polite">Updates use this same website and keep your saved records.</p><button id="applyUpdate" class="primary" style="display:none" onclick="refreshApp()">Refresh to Update</button></div>
+<div class="card"><div class="tag">App Updates</div><h2>Race Ready · 3.2.3</h2><p class="muted small">Dated programming accumulates · safe imports · earlier weeks preserved</p><button class="secondary" onclick="checkAppUpdate(this)">Check for Updates</button><p id="updateStatus" class="muted small" role="status" aria-live="polite">Updates use this same website and keep your saved records.</p><button id="applyUpdate" class="primary" style="display:none" onclick="refreshApp()">Refresh to Update</button></div>
 <div class="card"><div class="tag">Data</div><h2>Backup & Restore</h2><div class="muted small">V3 preserves the existing V2 workout-log storage key and adds records separately.</div><button class="secondary" onclick="exportData()">Export Backup</button><label class="secondary" style="display:block;text-align:center;cursor:pointer">Restore Backup<input id="restore" type="file" accept=".json" style="display:none"></label></div>
-<div class="card"><div class="tag">Programming</div><h2>Available Programming</h2><div class="muted small">Add dated Race Ready weeks to your calendar. Existing weeks stay in place; records and Podiums stay intact.</div><button class="primary" onclick="loadPublishedWeek('programming/cycle-1-week-1-2026-11-02.json','Cycle 1 · Week 1 · Nov 2–7')">Load Nov 2–7 to Calendar</button><div style="height:10px"></div><h2>Import Programming File</h2><div class="muted small">You can still import a programming JSON file manually.</div><label class="secondary" style="display:block;text-align:center;cursor:pointer">Import Programming<input id="programImport" type="file" accept=".json" style="display:none"></label></div>
+<div class="card"><div class="tag">Programming</div><h2>Available Programming</h2><div class="muted small">Add dated Race Ready weeks to your calendar. Existing weeks stay in place; records and Podiums stay intact.</div><button class="primary" onclick="loadPublishedWeek('programming/cycle-1-week-1-2026-11-02.json','Cycle 1 · Week 1 · Nov 2–7')">Load Nov 2–7 to Calendar</button><button class="primary" onclick="loadPublishedWeek('programming/cycle-1-week-2-2026-11-09.json','Cycle 1 · Week 2 · Nov 9–14')">Load Nov 9–14 to Calendar</button><div style="height:10px"></div><h2>Import Programming File</h2><div class="muted small">You can still import a programming JSON file manually.</div><label class="secondary" style="display:block;text-align:center;cursor:pointer">Import Programming<input id="programImport" type="file" accept=".json" style="display:none"></label></div>
 <div class="card"><div class="tag">Storage</div><h2>Local Data</h2><button class="secondary" onclick="clearData()">Clear Workout Logs</button></div>
 </section>
 <div class="footerhint">Race Ready • Practice skills. Build horsepower. Race for 90.</div></div>
@@ -78,7 +78,7 @@ let program=JSON.parse(localStorage.getItem(S.program)||'null')||baseProgram;
 let logs=JSON.parse(localStorage.getItem(S.logs)||'{}');
 let records=JSON.parse(localStorage.getItem(S.records)||'null')||{strength:{},fitness:{},benchmarks:{},podiums:{}};
 localStorage.setItem(S.schema,'3');
-let order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>programDateKey(a).localeCompare(programDateKey(b))),selected=order[0]||'thu',progressTab='strength';
+let order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>programDateKey(a).localeCompare(programDateKey(b))),todayNow=new Date(),todayDateKey=todayNow.getFullYear()+'-'+String(todayNow.getMonth()+1).padStart(2,'0')+'-'+String(todayNow.getDate()).padStart(2,'0'),selected=order.find(k=>programDateKey(k)===todayDateKey)||order[0]||'thu',progressTab='strength';
 let calendarCursor=new Date(2026,10,1);
 function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
 function save(){localStorage.setItem(S.logs,JSON.stringify(logs));localStorage.setItem(S.records,JSON.stringify(records))}
