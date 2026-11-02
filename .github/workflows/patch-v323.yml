@@ -1,0 +1,50 @@
+name: Race Ready v3.2.3 one-time patch
+
+on:
+  push:
+    paths:
+      - '.github/workflows/patch-v323.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch Race Ready v3.2.3
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+
+          # Build/version labels.
+          s = s.replace('content="3.2.2"', 'content="3.2.3"')
+          s = s.replace('Race Ready · 3.2.2', 'Race Ready · 3.2.3')
+
+          # Add Week 2 loader immediately after Week 1.
+          old = "<button class=\"primary\" onclick=\"loadPublishedWeek('programming/cycle-1-week-1-2026-11-02.json','Cycle 1 · Week 1 · Nov 2–7')\">Load Nov 2–7 to Calendar</button><div style=\"height:10px\"></div><h2>Import Programming File</h2>"
+          new = "<button class=\"primary\" onclick=\"loadPublishedWeek('programming/cycle-1-week-1-2026-11-02.json','Cycle 1 · Week 1 · Nov 2–7')\">Load Nov 2–7 to Calendar</button><button class=\"primary\" onclick=\"loadPublishedWeek('programming/cycle-1-week-2-2026-11-09.json','Cycle 1 · Week 2 · Nov 9–14')\">Load Nov 9–14 to Calendar</button><div style=\"height:10px\"></div><h2>Import Programming File</h2>"
+          if old not in s:
+              raise SystemExit('Week 1 loader anchor not found; refusing unsafe patch')
+          s = s.replace(old, new, 1)
+
+          # Today should start on the device's actual date when that date is programmed.
+          old = "let order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>programDateKey(a).localeCompare(programDateKey(b))),selected=order[0]||'thu',progressTab='strength';"
+          new = "let order=Object.keys(program).filter(k=>k!=='meta').sort((a,b)=>programDateKey(a).localeCompare(programDateKey(b))),todayNow=new Date(),todayDateKey=todayNow.getFullYear()+'-'+String(todayNow.getMonth()+1).padStart(2,'0')+'-'+String(todayNow.getDate()).padStart(2,'0'),selected=order.find(k=>programDateKey(k)===todayDateKey)||order[0]||'thu',progressTab='strength';"
+          if old not in s:
+              raise SystemExit('Today selection anchor not found; refusing unsafe patch')
+          s = s.replace(old, new, 1)
+
+          p.write_text(s)
+          PY
+      - name: Commit patch
+        run: |
+          git config user.name "Race Ready Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --check
+          git commit -m "Race Ready v3.2.3: Week 2 loader and Today startup fix"
+          git push
