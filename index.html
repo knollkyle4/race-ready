@@ -3,9 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0d0f12">
+<meta name="theme-color" content="#111214">
 <title>Race Ready</title>
-<meta name="rr-build" content="3.2.3">
+<link rel="manifest" href="./manifest.json?v=3.2.4">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/rr-icon-180-v324.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/rr-icon-192-v324.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Race Ready">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="rr-build" content="3.2.4">
 <style>
 :root{--bg:#0d0f12;--card:#171a1f;--card2:#111419;--line:#2a3039;--muted:#9ca4af;--accent:#d9ff3f;--text:#f7f8fa;--good:#79e08b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -36,9 +42,39 @@ button.secondary{width:100%;background:#242a33;color:white;border:0;border-radiu
 
 /* rr-calendar-v1 */
 .calHead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0}.calHead button{width:auto;margin:0;padding:9px 13px}.calTitle{text-align:center;font-weight:900;font-size:18px}.calDow,.calGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.calDow div{text-align:center;color:var(--muted);font-size:10px;font-weight:800;padding:4px}.calDay{min-height:78px;border:1px solid var(--line);background:#12161b;border-radius:10px;padding:7px;font-size:11px;position:relative}.calDay.out{opacity:.25}.calDay.today{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.calDay.done .calNum{color:var(--good)}.calNum{font-weight:900;font-size:13px}.calWorkout{margin-top:7px;font-size:10px;line-height:1.2;color:var(--accent);font-weight:800}.calEvent{margin-top:5px;font-size:9px;color:#e5c46a}.calDay.clickable{cursor:pointer}.calLegend{display:flex;gap:12px;flex-wrap:wrap;margin:10px 2px;color:var(--muted);font-size:10px}.calDot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:4px}.calDot.doneDot{background:var(--good)}@media(max-width:480px){.calDay{min-height:67px;padding:5px}.calWorkout{font-size:9px}.calEvent{font-size:8px}}
+
+/* Race Ready identity — 3.2.4 */
+:root{--bg:#111214;--card:#1b1d20;--card2:#151719;--line:#383a3c;--muted:#b3b3ac;--accent:#f5cf32;--text:#f5f1e8;--good:#8bd795}
+body{background:radial-gradient(ellipse at top,#292921 0,transparent 460px),var(--bg)}
+.app{padding-top:max(18px,env(safe-area-inset-top))}
+header{padding:18px 2px 22px;border-top:5px solid var(--accent);margin-top:8px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text);font-family:Impact,'Arial Narrow',sans-serif;font-size:29px;font-style:italic;letter-spacing:1px}
+.brand img{width:62px;height:62px;flex-shrink:0;border:1px solid var(--line);border-radius:12px}
+.brand span small{display:block;color:var(--accent);font:800 9px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-style:normal;letter-spacing:2.4px;margin-top:4px}
+header h1{font-size:18px;letter-spacing:0;margin:17px 0 5px;text-transform:uppercase}
+header>.muted{font-size:12px;line-height:1.5}
+.tabs{background:rgba(17,18,20,.98);border-bottom:1px solid var(--line)}
+.tab{border-radius:5px;text-transform:uppercase;font-size:10px;padding:12px 2px;letter-spacing:.4px}
+.tab.active{box-shadow:0 3px 0 #9e8418}
+.card{border-radius:8px}
+.hero{border-top:4px solid var(--accent);background:linear-gradient(135deg,#2b2c24,#191b1e)}
+h1,h2{font-family:Impact,'Arial Narrow',-apple-system,sans-serif}
+.card h2{letter-spacing:.3px}
+.hero h2{font-size:28px}
+.tag{letter-spacing:1.8px}
+button.primary{border-radius:5px;box-shadow:0 3px 0 #9e8418}
+button.secondary{border:1px solid var(--line);background:#292c2f;border-radius:5px}
+.daybtn,.calDay{border-radius:5px}
+.daybtn.active{background:#29291d;box-shadow:inset 0 -3px var(--accent)}
+.pill.active{background:#29291d}
+.footerhint{border-top:1px solid var(--line);padding-top:18px;line-height:1.7}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.podiums button.primary{box-shadow:none}
+.podiums button.secondary{background:var(--paper)}
+
 </style></head>
 <body><div class="app">
-<header><div class="brand">RACE READY</div><h1>Pro Class Build</h1><div class="muted">90-minute race engine • strength • CrossFit • FBB</div></header>
+<header><div class="brand"><img src="./icons/rr-icon-180-v324.png" alt=""><span>RACE READY<small>BUILT FOR ATV XC</small></span></div><h1>Pro Class Build</h1><div class="muted">90-minute race engine • strength • CrossFit • FBB</div></header>
 <nav class="tabs"><button class="tab active" data-view="today">Today</button><button class="tab" data-view="week">Week</button><button class="tab" data-view="history">History</button><button class="tab" data-view="progress">Progress</button><button class="tab" data-view="settings">Settings</button></nav>
 <section id="today" class="view active"><div class="weekbar" id="weekbar"></div><div id="workout"></div></section>
 <section id="week" class="view"><div class="card hero"><div class="tag">Training Calendar</div><h2 id="weekTitle">Current Programming</h2><div class="muted" id="weekSubtitle"></div></div><div class="card"><div class="calHead"><button class="secondary" onclick="changeCalendarMonth(-1)">←</button><div class="calTitle" id="calTitle"></div><button class="secondary" onclick="changeCalendarMonth(1)">→</button></div><div class="calDow"><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div><div>SUN</div></div><div class="calGrid" id="calendarGrid"></div><div class="calLegend"><span><i class="calDot"></i>Programmed</span><span><i class="calDot doneDot"></i>Completed</span></div></div><div id="weeklist"></div></section>
@@ -48,7 +84,7 @@ button.secondary{width:100%;background:#242a33;color:white;border:0;border-radiu
 <div class="pills"><button class="pill active" data-p="strength">Strength PRs</button><button class="pill" data-p="fitness">Fitness Records</button><button class="pill" data-p="benchmarks">Benchmark Metcons</button><button class="pill" data-p="podiums">Podiums</button></div><div id="progressPanel"></div>
 </section>
 <section id="settings" class="view">
-<div class="card"><div class="tag">App Updates</div><h2>Race Ready · 3.2.3</h2><p class="muted small">Dated programming accumulates · safe imports · earlier weeks preserved</p><button class="secondary" onclick="checkAppUpdate(this)">Check for Updates</button><p id="updateStatus" class="muted small" role="status" aria-live="polite">Updates use this same website and keep your saved records.</p><button id="applyUpdate" class="primary" style="display:none" onclick="refreshApp()">Refresh to Update</button></div>
+<div class="card"><div class="tag">App Updates</div><h2>Race Ready · 3.2.4</h2><p class="muted small">Dated programming accumulates · safe imports · earlier weeks preserved</p><button class="secondary" onclick="checkAppUpdate(this)">Check for Updates</button><p id="updateStatus" class="muted small" role="status" aria-live="polite">Updates use this same website and keep your saved records.</p><button id="applyUpdate" class="primary" style="display:none" onclick="refreshApp()">Refresh to Update</button></div>
 <div class="card"><div class="tag">Data</div><h2>Backup & Restore</h2><div class="muted small">V3 preserves the existing V2 workout-log storage key and adds records separately.</div><button class="secondary" onclick="exportData()">Export Backup</button><label class="secondary" style="display:block;text-align:center;cursor:pointer">Restore Backup<input id="restore" type="file" accept=".json" style="display:none"></label></div>
 <div class="card"><div class="tag">Programming</div><h2>Available Programming</h2><div class="muted small">Add dated Race Ready weeks to your calendar. Existing weeks stay in place; records and Podiums stay intact.</div><button class="primary" onclick="loadPublishedWeek('programming/cycle-1-week-1-2026-11-02.json','Cycle 1 · Week 1 · Nov 2–7')">Load Nov 2–7 to Calendar</button><button class="primary" onclick="loadPublishedWeek('programming/cycle-1-week-2-2026-11-09.json','Cycle 1 · Week 2 · Nov 9–14')">Load Nov 9–14 to Calendar</button><div style="height:10px"></div><h2>Import Programming File</h2><div class="muted small">You can still import a programming JSON file manually.</div><label class="secondary" style="display:block;text-align:center;cursor:pointer">Import Programming<input id="programImport" type="file" accept=".json" style="display:none"></label></div>
 <div class="card"><div class="tag">Storage</div><h2>Local Data</h2><button class="secondary" onclick="clearData()">Clear Workout Logs</button></div>
