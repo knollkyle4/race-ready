@@ -9,13 +9,13 @@
   "theme_color": "#111214",
   "icons": [
     {
-      "src": "./icons/rr-icon-192-v324.png",
+      "src": "./icons/bugeye-192-v325.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/rr-icon-512-v324.png",
+      "src": "./icons/bugeye-512-v325.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
