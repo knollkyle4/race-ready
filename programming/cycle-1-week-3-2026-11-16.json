@@ -1,0 +1,380 @@
+{
+  "program": {
+    "meta": {
+      "title": "Week of November 16, 2026",
+      "subtitle": "November 16–21, 2026 · Cycle 1 · Full-body strength, constantly varied hybrid CrossFit, TRX250R prototype",
+      "weekId": "2026-11-16"
+    },
+    "2026-11-16_mon": {
+      "dow": "MON",
+      "name": "Full Body | Squat Emphasis",
+      "theme": "Squat Strength + Athletic Armor",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy BikeErg",
+            "8 goblet squats",
+            "8 band pull-aparts",
+            "6 reverse lunges / leg",
+            "8 scap push-ups"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Back Squat · 5 × 5",
+          "items": [
+            "72–78% · RPE 7–8 · rest 2–3 min",
+            "Ramp-up (not logged): empty bar × 10, 40% × 6, 55% × 5, 65% × 3, 70% × 1"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Chest + Back Builder",
+          "title": "3 rounds",
+          "items": [
+            "10 DB floor presses",
+            "10–12 chest-supported DB rows",
+            "12–15 band face pulls"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Unilateral Legs + Shoulders",
+          "title": "3 rounds",
+          "items": [
+            "8 front-rack reverse lunges / leg",
+            "10 half-kneeling landmine presses / side"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Trunk",
+          "title": "3 rounds",
+          "items": [
+            "10–12 incline DB curls",
+            "12–15 rope triceps pressdowns",
+            "12 Pallof presses / side"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "8–10 min",
+          "items": [
+            "Wall-facing handstand holds or controlled HSPU practice",
+            "Skill quality only; no max efforts"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-17_tue": {
+      "dow": "TUE",
+      "name": "Hybrid CrossFit | Clean Power + Engine",
+      "theme": "Clean Power + Mixed-Modal Engine",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "200 m easy RowErg",
+            "8 empty-bar RDLs",
+            "6 empty-bar front squats",
+            "5 clean high pulls",
+            "6 scap pull-ups",
+            "20 single-unders"
+          ]
+        },
+        {
+          "tag": "Olympic Power",
+          "title": "Hang Power Clean · Every 90 sec × 6",
+          "items": [
+            "2 reps @ 65–75%; fast clean catches",
+            "Ramp-up (not logged): empty-bar drills × 5, 40% × 3, 55% × 3, 60% × 2"
+          ],
+          "log": "notes",
+          "sets": 6
+        },
+        {
+          "tag": "Engine",
+          "title": "5 rounds for time · cap 30 min",
+          "items": [
+            "400 m run",
+            "12 wall balls",
+            "8 pull-ups",
+            "10 alternating DB snatches",
+            "Target 20–28 min; pace sustainably"
+          ],
+          "log": "time"
+        },
+        {
+          "tag": "Grip + Trunk Armor",
+          "title": "2 rounds",
+          "items": [
+            "30–40 sec heavy farmer hold",
+            "10–12 hanging knee raises",
+            "20 tibialis raises"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "10 min",
+          "items": [
+            "Rope foot-lock practice or strict pull-up technique"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-18_wed": {
+      "dow": "WED",
+      "name": "Full Body | Press Emphasis",
+      "theme": "Press Strength + Muscular Endurance",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy SkiErg",
+            "10 band pull-aparts",
+            "8 glute bridges",
+            "8 alternating step-ups",
+            "8 light DB strict presses"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Strict Press · 5 × 5",
+          "items": [
+            "70–77% · RPE 7–8 · rest 2–3 min",
+            "Ramp-up (not logged): empty bar × 10, 40% × 6, 55% × 4, 65% × 2"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Legs + Back Builder",
+          "title": "3 rounds",
+          "items": [
+            "8 weighted step-ups / leg",
+            "8–10 weighted or strict pull-ups",
+            "12 DB hip thrusts"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Chest + Posterior Chain",
+          "title": "3 rounds",
+          "items": [
+            "10 incline DB bench presses",
+            "12 leg curls",
+            "12–15 rear-delt raises"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 EZ-bar curls",
+            "10–12 overhead rope triceps extensions",
+            "12–15 GHD sit-ups"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "8–10 min",
+          "items": [
+            "Double-under practice or light handstand skill"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-19_thu": {
+      "dow": "THU",
+      "name": "Hybrid CrossFit | Aerobic Gymnastics",
+      "theme": "Aerobic Threshold + Gymnastics",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "60 sec easy BikeErg",
+            "8 alternating lunges",
+            "8 ring rows",
+            "6 hanging knee raises",
+            "20 single-unders"
+          ]
+        },
+        {
+          "tag": "Aerobic Gymnastics",
+          "title": "30-min AMRAP",
+          "items": [
+            "500 m RowErg",
+            "20 alternating walking lunges",
+            "12 hand-release push-ups",
+            "8 toes-to-bar",
+            "40 double-unders",
+            "RPE 6–7; smooth transitions and sustainable pace"
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Shoulder + Hip Armor",
+          "title": "2 rounds",
+          "items": [
+            "12–15 band external rotations",
+            "20–30 sec Copenhagen hold / side",
+            "15–20 band pull-aparts"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "10 min",
+          "items": [
+            "Rope technique or controlled wall walks"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-20_fri": {
+      "dow": "FRI",
+      "name": "Full Body | Hinge Emphasis",
+      "theme": "Heavy Hinge + Athletic Armor",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy RowErg",
+            "10 light KB swings",
+            "8 bodyweight squats",
+            "8 ring rows",
+            "8 push-ups",
+            "6 single-leg RDL reaches / side"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Deadlift · 5 × 4",
+          "items": [
+            "75–82% · RPE 7.5–8 · rest 2–3 min; no grinders",
+            "Ramp-up (not logged): 40% × 6, 55% × 4, 65% × 3, 70% × 2"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Chest + Quads",
+          "title": "3 rounds",
+          "items": [
+            "8–10 incline DB bench presses",
+            "8 front-foot-elevated split squats / leg"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Back + Shoulders",
+          "title": "3 rounds",
+          "items": [
+            "10–12 supinated ring rows",
+            "8 bottoms-up KB presses / side",
+            "12–15 rear-delt cable flyes"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core / Grip",
+          "title": "3 rounds",
+          "items": [
+            "10 cross-body hammer curls / side",
+            "10–12 DB Tate presses",
+            "30–40 sec suitcase carry / side"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "10 min",
+          "items": [
+            "Light Olympic technique or calves/tibialis accessories"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-21_sat": {
+      "dow": "SAT",
+      "name": "Hybrid CrossFit | Honda Legends Prototype",
+      "theme": "TRX250R — The Race",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy BikeErg",
+            "8 KB deadlifts",
+            "6 burpees",
+            "6 hanging knee raises",
+            "25 ft light farmer carry",
+            "6 sandbag bear-hug squats"
+          ]
+        },
+        {
+          "tag": "Power Primer",
+          "title": "Push Jerk · 5 × 3",
+          "items": [
+            "65–75%; explosive, clean overhead positions",
+            "Ramp-up (not logged): empty bar × 8, 40% × 5, 55% × 3, 60% × 2"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Honda Legends Prototype",
+          "title": "TRX250R — The Race · continuous clock",
+          "items": [
+            "PHASE 1 — THE START: 30-cal BikeErg; 20 burpee box jump-overs; 10 sandbag over shoulder",
+            "PHASE 2 — THE GRIND: 3 rounds of 15-cal RowErg; 12 KB swings; 10 toes-to-bar; 50-ft sandbag bear-hug carry",
+            "PHASE 3 — THE FINISH: 20 burpees over sandbag; 100-ft heavy farmer carry; 30-cal BikeErg",
+            "Record total time, phase splits, RPE, limiting factor, loads and scaling",
+            "Prototype only; NOT an official 2027 Podium badge or attempt"
+          ],
+          "log": "time"
+        },
+        {
+          "tag": "Fill the Sleeves",
+          "title": "3 rounds · programmed",
+          "items": [
+            "12–15 incline DB curls",
+            "12–15 rope triceps pressdowns",
+            "15 band lateral raises"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "6–8 min",
+          "items": [
+            "Calves, tibialis or mobility work"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    }
+  }
+}
