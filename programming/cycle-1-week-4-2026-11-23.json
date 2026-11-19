@@ -1,0 +1,440 @@
+{
+  "program": {
+    "meta": {
+      "title": "Week of November 23, 2026",
+      "subtitle": "November 23–29, 2026 · Cycle 1 · Thanksgiving: full-gym through Wednesday, travel-friendly Thursday–Saturday",
+      "weekId": "2026-11-23"
+    },
+    "2026-11-23_mon": {
+      "dow": "MON",
+      "name": "Full Body | Squat Strength",
+      "theme": "Squat Strength + Athletic Armor",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy BikeErg",
+            "8 goblet squats with 2-sec pause",
+            "8 band pull-aparts",
+            "6 alternating reverse lunges / leg",
+            "8 scapular push-ups",
+            "6 dead bugs / side"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Back Squat · 6 × 3",
+          "items": [
+            "78–84% · RPE 7.5–8 · rest 2–3 min; consistent depth and speed, no grinders",
+            "Ramp-up (not logged): empty bar × 10, 40% × 6, 55% × 5, 65% × 3, 75% × 1"
+          ],
+          "log": "weight",
+          "sets": 6
+        },
+        {
+          "tag": "Chest + Back Builder",
+          "title": "3 rounds",
+          "items": [
+            "8–10 DB bench presses",
+            "10–12 chest-supported DB rows",
+            "Accessory target RPE 8–9, 1–2 reps in reserve; rest 60–90 sec between rounds"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Shoulders + Posterior Chain",
+          "title": "3 rounds",
+          "items": [
+            "10 seated DB Arnold presses",
+            "8–10 DB Romanian deadlifts",
+            "Controlled eccentric; rest 60–90 sec between rounds"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 incline DB curls",
+            "10–12 DB rolling triceps extensions",
+            "12–15 hanging knee raises"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "KOT Lower-Leg Armor · 2 rounds",
+          "items": [
+            "15–20 tibialis raises",
+            "15 straight-knee calf raises",
+            "15 bent-knee calf raises",
+            "Controlled effort; reduce if calves sore"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-24_tue": {
+      "dow": "TUE",
+      "name": "Hybrid CrossFit | Power + Sprint Engine",
+      "theme": "Olympic Power + Sprint Engine",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "150 m SkiErg",
+            "8 empty-bar RDLs",
+            "6 muscle snatches",
+            "6 PVC overhead squats",
+            "8 scapular pull-ups",
+            "6 box step-overs"
+          ]
+        },
+        {
+          "tag": "Olympic Power",
+          "title": "Power Snatch · every 90 sec × 8",
+          "items": [
+            "2 reps @ 65–75%; fast turnover, stable catches",
+            "Ramp-up (not logged): empty-bar drills × 5, 40% × 3, 50% × 3, 60% × 2"
+          ],
+          "log": "weight",
+          "sets": 8
+        },
+        {
+          "tag": "Sprint Engine",
+          "title": "21-15-9 · for time · 20-min cap",
+          "items": [
+            "Assault Bike calories: 21, 15, 9",
+            "Alternating DB snatches: 21, 15, 9 total",
+            "Burpees over DB: 21, 15, 9",
+            "After each completed round: 30 double-unders",
+            "Target 12–18 min; efficient movement and transitions"
+          ],
+          "log": "time"
+        },
+        {
+          "tag": "Athletic Armor",
+          "title": "3 rounds",
+          "items": [
+            "40-ft heavy farmer carry",
+            "12 controlled back extensions",
+            "15 band external rotations",
+            "Rest as needed for quality"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "8–10 min",
+          "items": [
+            "Rope-climb technique, handstand walking, or gymnastics skill practice"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-25_wed": {
+      "dow": "WED",
+      "name": "Full Body | Bench Strength",
+      "theme": "Bench Strength + Muscular Development",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy RowErg",
+            "8 scapular push-ups",
+            "10 band pull-aparts",
+            "8 glute bridges",
+            "6 goblet reverse lunges / side",
+            "8 light DB presses"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Bench Press · 5 × 4",
+          "items": [
+            "77–82% · RPE 7.5–8 · rest 2–3 min",
+            "Ramp-up (not logged): empty bar × 10, 40% × 8, 55% × 5, 65% × 3, 72% × 1"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Legs + Back Builder",
+          "title": "3 rounds",
+          "items": [
+            "8 DB Bulgarian split squats / leg",
+            "8–10 weighted or strict pull-ups",
+            "Accessory target RPE 8–9, 1–2 reps in reserve; rest 60–90 sec between rounds"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Shoulders + Posterior Chain",
+          "title": "3 rounds",
+          "items": [
+            "10 half-kneeling single-arm DB presses / side",
+            "10–12 lying leg curls",
+            "Controlled tempo; rest 60–90 sec between rounds"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 EZ-bar reverse curls",
+            "10–12 DB overhead triceps extensions",
+            "10–12 ab-wheel rollouts"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Grip + Shoulder Armor · 2 rounds",
+          "items": [
+            "30-sec suitcase hold / side",
+            "12–15 band face pulls",
+            "20-sec dead hang"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-26_thu": {
+      "dow": "THU",
+      "name": "Hybrid CrossFit | Thanksgiving Bodyweight",
+      "theme": "Turkey Day Throwdown",
+      "blocks": [
+        {
+          "tag": "Quick Warm-Up",
+          "title": "3 min",
+          "items": [
+            "20 sec easy jogging in place",
+            "20 jumping jacks",
+            "10 air squats",
+            "6 alternating lunges",
+            "3 inchworms",
+            "10 arm circles each direction"
+          ]
+        },
+        {
+          "tag": "Turkey Burner",
+          "title": "12-min AMRAP",
+          "items": [
+            "10 air squats",
+            "8 push-ups",
+            "6 burpees",
+            "12 alternating reverse lunges total",
+            "20 mountain climbers total",
+            "Score completed rounds + additional reps"
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Optional Dessert",
+          "title": "EMOM × 3 · 3 min",
+          "items": [
+            "20 sec plank",
+            "20 sec fast feet",
+            "20 sec rest"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-11-27_fri": {
+      "dow": "FRI",
+      "name": "Full Body | Travel Strength",
+      "theme": "Travel Full Body — Strength + Functional Armor",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8 min · 2 rounds",
+          "items": [
+            "30 sec jumping jacks",
+            "8 bodyweight squats",
+            "8 hip hinges",
+            "6 alternating reverse lunges / side",
+            "8 scapular push-ups",
+            "6 thoracic rotations / side"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "DB Front-Rack Split Squat · 4 × 8 / leg",
+          "items": [
+            "RPE 7–8; rest 90–120 sec; 3-sec eccentric and strong drive",
+            "No-equipment option: tempo split squat 4 × 10 / leg, 3-sec eccentric + 1-sec pause"
+          ],
+          "log": "weight",
+          "sets": 4
+        },
+        {
+          "tag": "Chest + Back Builder",
+          "title": "3 rounds",
+          "items": [
+            "10–12 DB floor presses",
+            "10–12 single-arm DB rows / side",
+            "Accessory target RPE 8–9 when resistance permits; rest 60–90 sec"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Shoulders + Posterior Chain",
+          "title": "3 rounds",
+          "items": [
+            "8–10 DB strict presses",
+            "10–12 DB Romanian deadlifts",
+            "Rest 60–90 sec between rounds"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 DB hammer curls",
+            "10–12 DB overhead triceps extensions",
+            "30–40 sec side plank / side"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Travel Armor · 2 rounds",
+          "items": [
+            "15–20 single-leg calf raises",
+            "15–20 tibialis raises",
+            "30-sec single-leg balance / side"
+          ],
+          "log": "notes",
+          "optional": true
+        },
+        {
+          "tag": "Equipment Substitution Note",
+          "title": "Travel options",
+          "items": [
+            "Use Race Ready Exercise & Cardio Substitution Guide if no DB/KB available.",
+            "No equipment: tempo push-ups for floor press; pike push-ups for strict press; single-leg hip hinge for RDL; self-resisted curls; close-grip push-ups for extensions.",
+            "Back: use a secure pull-up or row setup if possible; prone W raises / reverse snow angels are lighter upper-back activation, not equivalent loaded pulling."
+          ],
+          "log": "notes"
+        }
+      ]
+    },
+    "2026-11-28_sat": {
+      "dow": "SAT",
+      "name": "Hybrid CrossFit | Travel Three-Event Challenge",
+      "theme": "Holiday Hybrid — Three Events",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "6–8 min · 2 rounds",
+          "items": [
+            "30 sec easy jogging",
+            "8 air squats",
+            "6 alternating lunges",
+            "5 inchworms",
+            "6 alternating lateral lunges",
+            "4 controlled squat jumps"
+          ]
+        },
+        {
+          "tag": "Event 1 — The Engine",
+          "title": "10-min AMRAP",
+          "items": [
+            "100 m run",
+            "10 air squats",
+            "8 push-ups",
+            "6 burpees",
+            "Score rounds + reps"
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Recovery",
+          "title": "Rest 3 min",
+          "items": [
+            "Walk and breathe before next event"
+          ]
+        },
+        {
+          "tag": "Event 2 — The Grind",
+          "title": "8-min AMRAP",
+          "items": [
+            "12 alternating jumping lunges",
+            "10 sit-ups",
+            "8 hand-release push-ups",
+            "6 broad jumps",
+            "Score rounds + reps; scale jumping lunges to reverse lunges"
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Recovery",
+          "title": "Rest 3 min",
+          "items": [
+            "Prepare for final effort"
+          ]
+        },
+        {
+          "tag": "Event 3 — The Finish",
+          "title": "4-min AMRAP",
+          "items": [
+            "5 burpees",
+            "10 mountain climbers total",
+            "15 air squats",
+            "Score rounds + reps"
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Travel Armor · 2 rounds",
+          "items": [
+            "15 tibialis raises",
+            "15 single-leg calf raises / side",
+            "30-sec Copenhagen hold / side",
+            "30-sec dead bug hold"
+          ],
+          "log": "notes",
+          "optional": true
+        },
+        {
+          "tag": "Equipment Substitution Note",
+          "title": "Travel options",
+          "items": [
+            "Primary version requires running space and bodyweight only.",
+            "If equipped, see Race Ready Exercise & Cardio Substitution Guide for RowErg, goblet squat, loaded lunge and box jump substitutions.",
+            "Record any substitutions; compare scores using same version."
+          ],
+          "log": "notes"
+        }
+      ]
+    },
+    "2026-11-29_sun": {
+      "dow": "SUN",
+      "name": "Rest + Recovery",
+      "theme": "Rest + Recovery",
+      "blocks": [
+        {
+          "tag": "Recovery",
+          "title": "No structured workout",
+          "items": [
+            "Optional walking, mobility, or relaxed recreational activity"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    }
+  }
+}
