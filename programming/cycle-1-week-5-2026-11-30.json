@@ -1,0 +1,441 @@
+{
+  "program": {
+    "meta": {
+      "title": "Week of November 30, 2026",
+      "subtitle": "November 30–December 6 · Cycle 1 · Olympic choice, aerobic development, Five-Lap prototype",
+      "weekId": "2026-11-30"
+    },
+    "2026-11-30_mon": {
+      "dow": "MON",
+      "name": "Full Body | Deadlift",
+      "theme": "Posterior Chain Strength",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec RowErg",
+            "8 hip hinges",
+            "8 glute bridges",
+            "8 band pull-aparts",
+            "6 reverse lunges/leg",
+            "6 dead bugs/side"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Conventional Deadlift · 5 × 3",
+          "items": [
+            "78–83% 1RM · RPE 7.5–8 · rest 2–3 min",
+            "Ramp-up: 40% × 6, 55% × 5, 65% × 3, 72% × 2, 77% × 1"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Chest + Back",
+          "title": "3 rounds",
+          "items": [
+            "10–12 low-incline DB squeeze presses",
+            "8–12 supinated-grip inverted rows",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Quads + Delts",
+          "title": "3 rounds",
+          "items": [
+            "10–12 heel-elevated cyclist squats",
+            "12–15 lean-away DB lateral raises",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 spider curls",
+            "10–12 DB Tate presses",
+            "12–15 weighted reverse crunches",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Lower-Leg Armor · 2 rounds",
+          "items": [
+            "20 tibialis raises",
+            "15 bent-knee calf raises",
+            "30 sec single-leg balance/side"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-12-01_tue": {
+      "dow": "TUE",
+      "name": "Hybrid | Olympic Development + Engine",
+      "theme": "Oxidative endurance + glycolytic surges",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "200 m RowErg",
+            "8 empty-bar RDLs",
+            "6 muscle cleans or muscle snatches",
+            "6 front squats or overhead squats",
+            "8 scapular pull-ups",
+            "20 single-unders",
+            "Select warm-up movements for chosen complex."
+          ]
+        },
+        {
+          "tag": "Olympic Lifting — Athlete’s Choice",
+          "title": "Every 2 min × 7 sets · 14 min",
+          "items": [
+            "Choose ONE complex; record choice in session notes.",
+            "A: 1 power clean + 1 hang squat clean + 1 split jerk",
+            "B: 1 power snatch + 1 hang squat snatch + 1 overhead squat",
+            "60–70% of respective 1RM, limited by weakest movement; build gradually with crisp technique."
+          ],
+          "log": "weight",
+          "sets": 7
+        },
+        {
+          "tag": "CrossFit — Sustained Engine",
+          "title": "30-min AMRAP",
+          "items": [
+            "400 m run",
+            "15 alternating box step-ups (24/20 in)",
+            "12 ring rows",
+            "10 alternating DB snatches (50/35 lb)",
+            "40 double-unders",
+            "Score rounds + reps; RPE 6–7 overall; controlled running, brief surges, recover while moving."
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Body Armor",
+          "title": "3 rounds",
+          "items": [
+            "6 ATG split squats/leg",
+            "15 band face pulls",
+            "30 sec suitcase carry/side"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Gymnastics · 6-min alternating EMOM",
+          "items": [
+            "Minute 1: 3–5 controlled toes-to-bar",
+            "Minute 2: 15–20 sec wall-facing handstand hold"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-12-02_wed": {
+      "dow": "WED",
+      "name": "Full Body | Front Squat",
+      "theme": "Quad Strength + Full Body",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec BikeErg",
+            "8 goblet squats",
+            "8 ankle rocks/side",
+            "8 band pull-aparts",
+            "6 lateral lunges/side",
+            "6 dead bugs/side"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Front Squat · 5 × 4",
+          "items": [
+            "75–80% 1RM · RPE 7.5–8 · rest 2–3 min",
+            "Ramp-up: empty bar × 8, 40% × 6, 55% × 4, 65% × 3, 72% × 1"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Chest + Back",
+          "title": "3 rounds",
+          "items": [
+            "8–10 neutral-grip DB bench presses",
+            "10 single-arm Meadows rows/side",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Hamstrings + Rear Delts",
+          "title": "3 rounds",
+          "items": [
+            "10 B-stance DB RDLs/side",
+            "12–15 DB rear-delt flyes",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 cross-body hammer curls/arm",
+            "10–15 close-grip push-ups",
+            "12 tall-kneeling band Pallof presses/side",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Grip Development · 2 rounds",
+          "items": [
+            "30 sec heavy farmer hold",
+            "20–30 sec dead hang"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-12-03_thu": {
+      "dow": "THU",
+      "name": "Hybrid | Endurance + Short CrossFit",
+      "theme": "Oxidative efficiency + glycolytic conditioning",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "6–8 min · 2 rounds",
+          "items": [
+            "60 sec easy SkiErg",
+            "8 air squats",
+            "8 empty-bar hang power cleans",
+            "6 scapular push-ups",
+            "8 alternating reverse lunges",
+            "10 light wall balls"
+          ]
+        },
+        {
+          "tag": "Aerobic Development",
+          "title": "30 min continuous · 3 rounds",
+          "items": [
+            "6 min SkiErg",
+            "4 min BikeErg",
+            "Total: 18 min SkiErg + 12 min BikeErg",
+            "RPE 4–5; conversational pace; direct transitions.",
+            "Record distance on each machine, average HR if available, and RPE.",
+            "Rest 2–3 min before metcon."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "CrossFit — Short Burner",
+          "title": "9-min AMRAP",
+          "items": [
+            "6 × 25-ft shuttle runs (each length counts; 150 ft total)",
+            "9 hang power cleans (95/65 lb)",
+            "12 wall balls (20/14 lb)",
+            "Score rounds + reps; RPE 8–9; efficient cycling and controlled turns."
+          ],
+          "log": "score"
+        },
+        {
+          "tag": "Body Armor",
+          "title": "3 rounds",
+          "items": [
+            "40-ft reverse sled drag",
+            "12–15 band external rotations/side",
+            "30 sec heavy farmer hold"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Mobility · 6–8 min",
+          "items": [
+            "8 thoracic rotations/side",
+            "60 sec couch stretch/side",
+            "60 sec overhead shoulder stretch",
+            "Repeat as time allows"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-12-04_fri": {
+      "dow": "FRI",
+      "name": "Full Body | Strict Press",
+      "theme": "Overhead Strength + Full Body",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec SkiErg",
+            "10 band pull-aparts",
+            "8 scapular push-ups",
+            "8 light DB presses",
+            "8 glute bridges",
+            "6 reverse lunges/leg"
+          ]
+        },
+        {
+          "tag": "Primary Strength",
+          "title": "Strict Press · 5 × 5",
+          "items": [
+            "70–77% 1RM · RPE 7.5–8 · rest 2–3 min",
+            "Ramp-up: empty bar × 10, 40% × 6, 55% × 4, 65% × 2"
+          ],
+          "log": "weight",
+          "sets": 5
+        },
+        {
+          "tag": "Legs + Back",
+          "title": "3 rounds",
+          "items": [
+            "8 front-foot-elevated reverse lunges/leg",
+            "10–12 wide-grip ring rows",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds.",
+            "Keep 2 reps in reserve on lower-body work ahead of Saturday."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Chest + Hamstrings",
+          "title": "3 rounds",
+          "items": [
+            "10–12 DB fly-to-press",
+            "12–15 Swiss-ball hamstring curls",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Arms + Core",
+          "title": "3 rounds",
+          "items": [
+            "10–12 Zottman curls",
+            "12–15 DB triceps kickbacks",
+            "15–20 hollow-body rocks",
+            "RPE 8–9; 1–2 reps in reserve; rest 60–90 sec between rounds."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Shoulder Armor · 2 rounds",
+          "items": [
+            "15 band pull-aparts",
+            "12 light band external rotations/side",
+            "30 sec thoracic mobility/side"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-12-05_sat": {
+      "dow": "SAT",
+      "name": "Honda Legends | TRX250R Five-Lap",
+      "theme": "Prototype #2 · pacing and fatigue resistance",
+      "blocks": [
+        {
+          "tag": "Build Readiness",
+          "title": "8–10 min · 2 rounds",
+          "items": [
+            "45 sec easy BikeErg",
+            "8 KB deadlifts",
+            "8 alternating lunges",
+            "5 controlled burpees",
+            "5 light sandbag squats",
+            "30 ft light farmer carry"
+          ]
+        },
+        {
+          "tag": "TRX250R — Five-Lap",
+          "title": "5 rounds for time · estimated 22–30 min",
+          "items": [
+            "12 BikeErg calories",
+            "10 sandbag bear-hug squats (100 lb)",
+            "6 burpee box jump-overs (24 in)",
+            "100-ft DB farmer carry (2 × 70 lb)",
+            "Provisional prototype Rx; not an official Podium attempt.",
+            "Pace consistently; push final lap if capacity remains.",
+            "The Race reference: 18:38 Rx."
+          ],
+          "log": "time"
+        },
+        {
+          "tag": "Prototype Scorecard",
+          "title": "Lap splits · 5 laps",
+          "items": [
+            "Record individual lap times; note fastest/slowest lap, primary limiter, loads and any scaling."
+          ],
+          "log": "round",
+          "sets": 5
+        },
+        {
+          "tag": "Body Armor",
+          "title": "2 rounds",
+          "items": [
+            "20 tibialis raises",
+            "20 sec Copenhagen plank/side",
+            "12 banded Y-raises"
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Fill the Sleeves",
+          "title": "3 rounds",
+          "items": [
+            "12 DB concentration curls/arm",
+            "12–15 DB overhead triceps extensions",
+            "15 DB lateral raises",
+            "Rest 45–60 sec between rounds; controlled eccentric, challenging resistance."
+          ],
+          "log": "notes"
+        },
+        {
+          "tag": "Optional Wildcard",
+          "title": "Recovery · 5–8 min",
+          "items": [
+            "Hip, ankle and forearm mobility"
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    },
+    "2026-12-06_sun": {
+      "dow": "SUN",
+      "name": "Rest + Recovery",
+      "theme": "Recovery",
+      "blocks": [
+        {
+          "tag": "Optional Wildcard",
+          "title": "No structured training",
+          "items": [
+            "Easy walking, light stretching, joint mobility or gentle foam rolling.",
+            "Prioritize sleep, hydration and nutrition."
+          ],
+          "log": "notes",
+          "optional": true
+        }
+      ]
+    }
+  }
+}
