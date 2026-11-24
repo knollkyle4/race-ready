@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "weeks": [
+    {
+      "weekId": "2026-11-30",
+      "path": "programming/cycle-1-week-5-2026-11-30.json",
+      "sha256": "def98fb6d3c2046c1f64bc43d26902f2b99d5905f35905c42e5f5bd72372aa00",
+      "approved": true,
+      "publishedAt": "2026-11-24T13:59:45.266Z"
+    }
+  ]
+}
